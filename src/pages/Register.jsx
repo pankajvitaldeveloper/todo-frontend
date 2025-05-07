@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -12,7 +14,8 @@ const Register = () => {
     const {name, value} = e.target;
     setFormData((prev)=>({
         // prev is the previous state of the formData state
-        ...prev,
+        ...prev,// this is used to copy the previous state of the formData state
+        // below code is used to set the value of the input field
         [name]: value,
     }))
   };
@@ -26,17 +29,15 @@ const Register = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),// json.stringify is used to convert the formData state into a string
+        body: JSON.stringify(formData),// json.stringify is used to convert the formData state into a string and send it to the server
       });
 
-  
       const result = await response.json();
   
       if (response.ok) {
         alert("Registration successful!");
         console.log(result);
-        // Optionally redirect to login page after successful registration
-        navigator("/login")
+        navigate("/login"); // Changed from navigator to navigate
       } else {
         alert(`Registration failed: ${result.message || "Unknown error"}`);
       }

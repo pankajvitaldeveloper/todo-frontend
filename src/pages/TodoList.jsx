@@ -83,7 +83,7 @@ const TodoList = () => {
     <div className="pt-20">
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">All Todos List</h1>
+          <h1 className="text-2xl font-bold text-gray-800">All Todos</h1>
           <Link to="/todos" className='px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors'>
             Go Back
           </Link>
