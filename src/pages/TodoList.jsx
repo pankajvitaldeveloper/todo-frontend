@@ -18,7 +18,7 @@ const TodoList = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/todo', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -35,7 +35,7 @@ const TodoList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -55,7 +55,7 @@ const TodoList = () => {
 
   const handleUpdate = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/todo/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

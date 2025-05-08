@@ -33,7 +33,7 @@ const TodoShow = () => {
                 navigate('/login');
                 return;
             }
-            const response = await fetch('http://localhost:5000/api/todo', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
@@ -77,7 +77,7 @@ const TodoShow = () => {
                 return;
             }
             
-            const response = await fetch('http://localhost:5000/api/todo', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const TodoShow = () => {
                 return;
             }
             
-            const response = await fetch(`http://localhost:5000/api/todo/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -148,7 +148,7 @@ const TodoShow = () => {
                 return;
             }
             
-            const response = await fetch(`http://localhost:5000/api/todo/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

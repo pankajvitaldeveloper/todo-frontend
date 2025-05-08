@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response =  await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,13 +116,7 @@ const Login = () => {
             >
               Forgot Password?
             </Link>
-            <span className="text-gray-300">|</span>
-            <Link
-              to="/help"
-              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-            >
-              Need Help?
-            </Link>
+            
           </div>
         </div>
       </div>
