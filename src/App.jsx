@@ -11,13 +11,13 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import TodoShow from "./pages/TodoShow";
 import TodoList from "./pages/TodoList";
-import ForgetPassword from "./pages/ForgetPassword";
+import ForgetPassword from "./pages/ForgetPassword"; 
 import ResetPassword from "./pages/ResetPassword";
 
 // Separate component to access useLocation after Router is active
 const AppRoutes = () => {
   const location = useLocation();
-  const hideHeaderRoutes = ["/login", "/register"];
+  const hideHeaderRoutes = ["/login", "/register", "/forgot-password"];
   const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
   return (
